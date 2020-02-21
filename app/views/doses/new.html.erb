@@ -1,9 +1,16 @@
-<h1>Set a dose</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cocktail.url %>);">
+  <div class="container">
+    <h1>Set a dose for a <%= @cocktail.name %></h1>
+  </div>
+</div>
 
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingredient %>
-  <%= f.button :submit, class:'btn btn-primary' %>
-<% end %>
-
+<div class="container mt-5">
+  <div class="form">
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.input :description %>
+      <%= f.association :ingredient %>
+      <%= f.button :submit, class:'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
 

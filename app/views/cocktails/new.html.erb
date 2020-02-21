@@ -1,11 +1,19 @@
-<h1>Create a new Cocktail</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://maba.blog/wp-content/uploads/2019/05/Top-3-Bars-%C3%A0-cocktails-MABA-Blog.png">
+  <div class="container">
+    <h1>Create a new Cocktail</h1>
+  </div>
+</div>
 
-<%= form_for(@cocktail) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :url %>
-  <%= f.text_field :url %>
-  <%= f.submit %>
-<% end %>
+<div class="container mt-5">
+  <div class="form">
+    <%= simple_form_for [@cocktail] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :url %>
+      <%= f.button :submit, class:'btn btn-primary' %>
+    <% end %>
+  </div>
+  <div class="back  mt-5">
+    <%= link_to 'Back', cocktails_path %>
+  </div>
+</div>
 
-<%= link_to 'Back', cocktails_path %>

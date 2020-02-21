@@ -1,12 +1,19 @@
-<h1>Edit your Cocktail</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cocktail.url %>);">
+  <div class="container">
+    <h1>Edit <%= @cocktail.name %></h1>
+  </div>
+</div>
 
-<%= form_for(@cocktail) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :url %>
-  <%= f.text_field :url %>
-  <%= f.submit %>
-<% end %>
 
-<%= link_to 'Back', cocktails_path %>
-
+<div class="container mt-5">
+  <div class="form">
+    <%= simple_form_for [@cocktail] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :url %>
+      <%= f.button :submit, class:'btn btn-primary' %>
+    <% end %>
+  </div>
+  <div class="back  mt-5">
+    <%= link_to 'Back', cocktails_path %>
+  </div>
+</div>
