@@ -14,12 +14,9 @@ Ingredient.create(name: 'mint leaves')
 
 url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 
-INGREDIENTS = []
-
 ingredients = JSON.parse(open(url).read)
 xx = ingredients["drinks"]
 xx.each do |x|
   Ingredient.create(name: x['strIngredient1'])
-  INGREDIENTS << x['strIngredient1']
 end
 

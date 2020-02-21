@@ -18,12 +18,20 @@ class DosesController < ApplicationController
   end
 
   def destroy
+    @dose = Dose.find(params[:id])
+    @dose.destroy
+    redirect_to @dose.cocktail
   end
 
   def edit
+    @cocktail = Cocktail.find(params[:cocktail_id])
   end
 
   def update
+    raise
+    @dose = Ingredient.find(params[:cocktail_id])
+    @cocktail = Dose.find(params[:cocktail_id])
+    @dose.update(params[:dose])
   end
 
   private
