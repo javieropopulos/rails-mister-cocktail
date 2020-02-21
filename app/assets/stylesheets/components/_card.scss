@@ -45,3 +45,14 @@
   top: 5px;
   right: 40px;
 }
+
+.create-new a {
+  color: white;
+  transition: .5s;
+}
+
+.create-new a:hover {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
